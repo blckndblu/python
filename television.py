@@ -35,49 +35,64 @@ class Television:
 
     def mute(self):
         """
-        Method to change muted status of television object
+        Method to change muted status of television object if television status is True
         """
-        if self._muted:
-            self._muted = False
+        if self._status:
+            if self._muted:
+                self._muted = False
+            else:
+                self._muted = True
         else:
-            self._muted = True
+            pass
 
     def channel_up(self):
         """
-        Method to increase channel value of television object
+        Method to increase channel value of television object if television status is True
         If channel is at MAX_CHANNEL, then channel becomes MIN_CHANNEL
         """
-        if self._channel == self.MAX_CHANNEL:
-            self._channel = self.MIN_CHANNEL
+        if self._status:
+            if self._channel == self.MAX_CHANNEL:
+                self._channel = self.MIN_CHANNEL
+            else:
+                self._channel += 1
         else:
-            self._channel += 1
+            pass
 
     def channel_down(self):
         """
-        Method to decrease channel value of television object
+        Method to decrease channel value of television object if television status is True
         If channel is at MIN_CHANNEL, then channel becomes MAX_CHANNEL
         """
-        if self._channel == self.MIN_CHANNEL:
-            self._channel = self.MAX_CHANNEL
+        if self._status:
+            if self._channel == self.MIN_CHANNEL:
+                self._channel = self.MAX_CHANNEL
+            else:
+                self._channel -= 1
         else:
-            self._channel -= 1
+            pass
 
     def volume_up(self):
         """
-        Method to increase volume value of television object
+        Method to increase volume value of television object if television status is True
         If volume is at MAX_VOLUME, then volume is unchanged
         """
-        if self._volume != self.MAX_VOLUME:
-            self._volume += 1
+        if self._status:
+            if self._volume != self.MAX_VOLUME:
+                self._volume += 1
+            else:
+                pass
         else:
             pass
 
     def volume_down(self):
         """
-        Method to decrease volume value of television object
+        Method to decrease volume value of television object if television status is True
         If volume is at MIN_VOLUME, then volume is unchanged
         """
-        if self._volume != self.MIN_VOLUME:
-            self._volume -= 1
+        if self._status:
+            if self._volume != self.MIN_VOLUME:
+                self._volume -= 1
+            else:
+                pass
         else:
             pass
